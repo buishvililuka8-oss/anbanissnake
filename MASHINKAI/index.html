@@ -1,0 +1,63 @@
+<!--===== გაკეთებულია ლაშა ამონდაშვილი ლუკა ბუიშვილი და გაბრიელ ჯორჯაძის მიერ =====-->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ანბანის სნეიქი</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>🐍 ანბანის სნეიქი</h1>
+<p class="sub">გველი ქართულ ასოებს ჭამს — შეაგროვე მთელი ანბანი!</p>
+
+<div class="wrap">
+  <div class="stage">
+    <canvas id="c" width="600" height="600"></canvas>
+    <div class="toast" id="toast"></div>
+    <div class="overlay" id="ov">
+      <h2 id="ovTitle">მზად ხარ?</h2>
+      <p id="ovText">ისრებით ან WASD-ით მართე გველი. „ანბანის“ რეჟიმში ჭამე ასოები რიგრიგობით: ა → ბ → გ…</p>
+      <button id="startBtn">თამაშის დაწყება</button>
+    </div>
+
+  </div>
+  <div class="pad" id="pad">
+      <span></span><button data-d="0,-1">▲</button><span></span>
+      <button data-d="-1,0">◀</button><button class="mid" id="pauseBtn">⏸</button><button data-d="1,0">▶</button>
+      <span></span><button data-d="0,1">▼</button><span></span>
+    </div>
+
+  <div class="panel">
+    <div class="card">
+      <div class="label">რეჟიმი</div>
+      <div class="modes" style="margin-top:6px">
+        <button id="mAlpha" class="on">ანბანი</button>
+        <button id="mFree">თავისუფალი</button>
+      </div>
+    </div>
+    <div class="card" id="targetCard">
+      <div class="label">შემდეგი ასო</div>
+      <div class="target" id="target">ა</div>
+    </div>
+    <div class="card" style="display:flex;justify-content:space-between">
+      <div><div class="label">ქულა</div><div class="big" id="score">0</div></div>
+      <div><div class="label">რეკორდი</div><div class="big" id="best">0</div></div>
+      <div><div class="label">სიცოცხლე</div><div class="big" id="lives">❤❤❤</div></div>
+    </div>
+    <div class="card">
+      <div class="label" style="margin-bottom:8px">ანბანი</div>
+      <div class="alpha" id="alpha"></div>
+    </div>
+    <div class="card keys">
+      <kbd>↑ ↓ ← →</kbd> ან <kbd>W A S D</kbd> — მოძრაობა<br>
+      <kbd>Space</kbd> — პაუზა &nbsp; <kbd>Enter</kbd> — დაწყება
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
